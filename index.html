@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Office Application</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="left-header">
+                <p class="head">Post Office Application.</p>
+                <p class="content">This Application Allows you to extract information about the nearest Post Offices,
+                    based on your location.
+                </p>
+            </div>
+            <img src="./images/left-section-img.png" alt="Post office logo">
+        </div>
+        <div class="right-section">
+            <div>
+                <div class="right-header">
+                    <p class="right-head">Your Current IP Address is </p>
+                    <p id="ip">127.0.01</p>
+                </div>
+                <button id="btn">Get Started</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script>
+        document.getElementById("btn").onclick = function () {
+            console.log("clicked");
+            location.href = "./main.html";
+        }
+        async function getip() {
+            const response = await fetch("https://api.ipify.org/?format=json");
+            const data = await response.json();
+            document.getElementById("ip").innerHTML = data.ip;
+            sessionStorage.setItem("ip", data.ip);
+        }
+        getip();
+    </script>
+</body>
+
+</html>

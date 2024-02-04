@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="ip-header">
+        <div class="info">
+            <div class="info-head">
+                IP Address :
+            </div>
+            <div id="ip-info" class="info-detail">
+                127.0.01
+            </div>
+        </div>
+        <div class="ip-details">
+            <div class="info">
+                <div class="info-head">
+                    Lat :
+                </div>
+                <div id="Lat-info" class="info-detail">
+
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-head">
+                    City :
+                </div>
+                <div id="city-info" class="info-detail">
+
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-head">
+                    Organisation :
+                </div>
+                <div id="Organisation-info" class="info-detail">
+
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-head">
+                    Long :
+                </div>
+                <div id="long-info" class="info-detail">
+
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-head">
+                    Region :
+                </div>
+                <div id="region-info" class="info-detail">
+
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-head">
+                    Hostname :
+                </div>
+                <div id="hostname-info" class="info-detail">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="location">
+        <div class="location-header">Your Current Location</div>
+        <iframe id="map" width="1100" height="677" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+            src="">
+
+        </iframe>
+    </div>
+    <div class="more-info">
+        <div class="more-info-head">More Information About You</div>
+        <div class="more-info-content">
+            <div class="more-info-item">
+                <div class="more-info-item-head">
+                    Time Zone :
+                </div>
+                <div id="time-zone" class="more-info-item-content"></div>
+            </div>
+            <div class="more-info-item">
+                <div class="more-info-item-head">
+                    Date And Time :
+                </div>
+                <div id="date-time" class="more-info-item-content"></div>
+            </div>
+            <div class="more-info-item">
+                <div class="more-info-item-head">
+                    Pincode :
+                </div>
+                <div id="pincode" class="more-info-item-content"></div>
+            </div>
+            <div class="more-info-item">
+                <div class="more-info-item-head">
+                    Message : 
+                </div>
+                <div id="message" class="more-info-item-content"></div>
+            </div>
+        </div>
+    </div>
+    <div class="post-offices">
+        <div class="post-offices-head">Post Offices Near You</div>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass" style="color: #fafafa;"></i>
+            <input id="search" type="text" placeholder="Search By Name">
+        </div>
+        <div class="post-offices-content">
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
