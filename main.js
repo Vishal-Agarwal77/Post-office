@@ -66,7 +66,7 @@ function displayPostOffice(items) {
 
 async function getinfo() {
     try {
-        const response = await fetch(`ipinfo.io/${IP}?token=5940de3cb45c17`);
+        const response = await fetch(`https://ipinfo.io/${IP}?token=5940de3cb45c17`);
         const data = await response.json();
         console.log(data);
         lat.innerHTML = data.lat;
