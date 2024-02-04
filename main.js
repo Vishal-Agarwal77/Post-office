@@ -72,7 +72,7 @@ async function getinfo() {
         let arr = data.loc.split(",");
         lat.innerHTML = arr[0];
         city.innerHTML = data.city;
-        organisation.innerHTML = data.isp;
+        organisation.innerHTML = data.org;
         long.innerHTML = arr[1];
         region.innerHTML = data.region;
         postal.innerHTML = data.postal;
@@ -90,7 +90,7 @@ async function getinfo() {
 async function showMap(data) {
     let lat = data.lat;
     let long = data.lon;
-    let linkUrl = "http://maps.google.com?q=" + lat + ", " + long;
+    let linkUrl = "https://maps.google.com?q=" + lat + ", " + long;
     let embedMap = document.getElementById("map");
     embedMap.src = linkUrl + "&z=15&output=embed";
 }
