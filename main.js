@@ -10,7 +10,7 @@ const postal = document.getElementById("pincode");
 const post_offices_content = document.getElementsByClassName("post-offices-content")[0];
 const message = document.getElementById("message");
 const time_zone = document.getElementById("time-zone");
-const date_time=document.getElementById("date-time");
+const date_time = document.getElementById("date-time");
 
 ip_info.innerHTML = IP;
 let postoffice_data;
@@ -65,20 +65,25 @@ function displayPostOffice(items) {
 }
 
 async function getinfo() {
-    const response = await fetch(`ipinfo.io/${IP}?token=5940de3cb45c17`);
-    const data = await response.json();
-    console.log(data);
-    lat.innerHTML = data.lat;
-    city.innerHTML = data.city;
-    organisation.innerHTML = data.isp;
-    long.innerHTML = data.lon;
-    region.innerHTML = data.regionName;
-    postal.innerHTML = data.zip;
-    time_zone.innerHTML = data.timezone;
-    let datetime_str = new Date().toLocaleString("en-US", { timeZone: data.timeZone });
-    date_time.innerHTML=datetime_str;
-    getpostoffices(data.zip);
-    showMap(data);
+    try {
+        const response = await fetch(`ipinfo.io/${IP}?token=5940de3cb45c17`);
+        const data = await response.json();
+        console.log(data);
+        lat.innerHTML = data.lat;
+        city.innerHTML = data.city;
+        organisation.innerHTML = data.isp;
+        long.innerHTML = data.lon;
+        region.innerHTML = data.regionName;
+        postal.innerHTML = data.zip;
+        time_zone.innerHTML = data.timezone;
+        let datetime_str = new Date().toLocaleString("en-US", { timeZone: data.timeZone });
+        date_time.innerHTML = datetime_str;
+        getpostoffices(data.zip);
+        showMap(data);
+    }
+    catch (err) {
+        console.log(err);
+    }
 }
 
 async function showMap(data) {
