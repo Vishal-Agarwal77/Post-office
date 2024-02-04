@@ -66,19 +66,20 @@ function displayPostOffice(items) {
 
 async function getinfo() {
     try {
-        const response = await fetch(`http://ip-api.com/json/${IP}`);
+        const response = await fetch(`https://ipinfo.io/${IP}?token=5940de3cb45c17`);
         const data = await response.json();
         console.log(data);
-        lat.innerHTML = data.lat;
+        let arr = data.loc.split(",");
+        lat.innerHTML = arr[0];
         city.innerHTML = data.city;
         organisation.innerHTML = data.isp;
-        long.innerHTML = data.lon;
-        region.innerHTML = data.regionName;
-        postal.innerHTML = data.zip;
+        long.innerHTML = arr[1];
+        region.innerHTML = data.region;
+        postal.innerHTML = data.postal;
         time_zone.innerHTML = data.timezone;
         let datetime_str = new Date().toLocaleString("en-US", { timeZone: data.timeZone });
         date_time.innerHTML = datetime_str;
-        getpostoffices(data.zip);
+        getpostoffices(data.postal);
         showMap(data);
     }
     catch (err) {
